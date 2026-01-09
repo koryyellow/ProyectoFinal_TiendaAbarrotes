@@ -1,4 +1,4 @@
-# 🏪 Sistema de Gestión – Tienda de Abarrotes
+#  Sistema de Gestión – Tienda de Abarrotes
 
 Sistema integral de gestión para una **Tienda de Abarrotes**, desarrollado como proyecto académico para la materia de **Bases de Datos**.
 
@@ -6,9 +6,9 @@ El sistema permite administrar de forma eficiente el **inventario**, las **venta
 
 ---
 
-## 🚀 Características Principales
+##  Características Principales
 
-### 📦 Gestión de Inventario
+### Gestión de Inventario
 - Registro de productos de abarrotes
 - Control de:
   - Nombre
