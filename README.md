@@ -86,6 +86,17 @@ La base de datos está diseñada bajo un **modelo relacional normalizado**, evit
 Cada tabla cuenta con su **llave primaria** y relaciones mediante **llaves foráneas**.
 
 ---
+### Pruebas de la Página 
+
+<img width="1839" height="821" alt="image" src="https://github.com/user-attachments/assets/f0e76057-9a58-41e8-8dba-5c632900cb0c" />
+<img width="1468" height="796" alt="image" src="https://github.com/user-attachments/assets/8424e2b4-2032-4bba-be9f-f68804c377b2" />
+<img width="1074" height="612" alt="image" src="https://github.com/user-attachments/assets/df73ac13-37e2-4e29-b7af-52daa544aea2" />
+<img width="1527" height="763" alt="image" src="https://github.com/user-attachments/assets/e68f7bf9-b7be-41c7-973e-1745f3a07b38" />
+- - -
+
+
+
+
 
 ## 🔁 Implementación del ORM
 
