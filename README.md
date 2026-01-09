@@ -1,4 +1,4 @@
-#  Sistema de Gestión – Tienda de Abarrotes
+# 🛒 Sistema de Gestión – Tienda de Abarrotes
 
 Sistema integral de gestión para una **Tienda de Abarrotes**, desarrollado como proyecto académico para la materia de **Bases de Datos**.
 
@@ -6,11 +6,11 @@ El sistema permite administrar de forma eficiente el **inventario**, las **venta
 
 ---
 
-##  Características Principales
+## ✨ Características Principales
 
-### Gestión de Inventario
+### 📦 Gestión de Inventario
 - Registro de productos de abarrotes
-- Control de:
+- Control de información:
   - Nombre
   - Precio
   - Stock
@@ -18,11 +18,17 @@ El sistema permite administrar de forma eficiente el **inventario**, las **venta
 - Actualización automática del inventario al realizar ventas
 
 ---
-### Pasos a seguir 
-Cuando ingreses a la pagina principal es necesario que en usuario y contraseña pongas "admin" y "admin" respectivamente
-ya una vez dentro puedes agregar , eliminar datos como si fuera la interfaz de la tienda que gestionas 
+
+### 🔐 Acceso al Sistema
+Al ingresar a la página principal, utiliza las siguientes credenciales:
+
+- **Usuario:** `admin`
+- **Contraseña:** `admin`
+
+Una vez dentro del sistema, podrás **agregar, editar y eliminar información**, simulando la gestión real de una tienda de abarrotes.
 
 ---
+
 ### 👥 Gestión de Usuarios
 - Administración de clientes
 - Gestión de empleados
@@ -70,7 +76,7 @@ ya una vez dentro puedes agregar , eliminar datos como si fuera la interfaz de l
 
 ---
 
-## 📊 Arquitectura de la Base de Datos
+## 🗂️ Arquitectura de la Base de Datos
 
 La base de datos está diseñada bajo un **modelo relacional normalizado**, evitando redundancia y garantizando consistencia.
 
@@ -86,17 +92,18 @@ La base de datos está diseñada bajo un **modelo relacional normalizado**, evit
 Cada tabla cuenta con su **llave primaria** y relaciones mediante **llaves foráneas**.
 
 ---
-### Pruebas de la Página 
 
-<img width="1839" height="821" alt="image" src="https://github.com/user-attachments/assets/f0e76057-9a58-41e8-8dba-5c632900cb0c" />
-<img width="1468" height="796" alt="image" src="https://github.com/user-attachments/assets/8424e2b4-2032-4bba-be9f-f68804c377b2" />
-<img width="1074" height="612" alt="image" src="https://github.com/user-attachments/assets/df73ac13-37e2-4e29-b7af-52daa544aea2" />
-<img width="1527" height="763" alt="image" src="https://github.com/user-attachments/assets/e68f7bf9-b7be-41c7-973e-1745f3a07b38" />
-- - -
+## 🧪 Pruebas de la Página
 
+<img width="1839" height="821" alt="Vista general" src="https://github.com/user-attachments/assets/f0e76057-9a58-41e8-8dba-5c632900cb0c" />
 
+<img width="1468" height="796" alt="Gestión de productos" src="https://github.com/user-attachments/assets/8424e2b4-2032-4bba-be9f-f68804c377b2" />
 
+<img width="1074" height="612" alt="Ventas" src="https://github.com/user-attachments/assets/df73ac13-37e2-4e29-b7af-52daa544aea2" />
 
+<img width="1527" height="763" alt="Pagos a crédito" src="https://github.com/user-attachments/assets/e68f7bf9-b7be-41c7-973e-1745f3a07b38" />
+
+---
 
 ## 🔁 Implementación del ORM
 
@@ -104,7 +111,7 @@ El proyecto implementa un **ORM propio en PHP**, que permite mapear las tablas d
 
 ---
 
-### 📂 Estructura del ORM
+## 📂 Estructura del ORM
 
 ```text
 models/
@@ -115,6 +122,7 @@ models/
 ├── Venta.php
 ├── DetalleVenta.php
 └── PagoCredito.php
+
 🧩 Mapeo Objeto–Relacional
 Cada clase del ORM:
 
