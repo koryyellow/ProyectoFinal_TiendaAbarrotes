@@ -104,10 +104,8 @@ body {
 
     <!-- Contenido dinámico -->
     <div class="table-box mb-4">
-      <h5 id="tituloSeccion">📋 Productos</h5>
-      <div id="contenidoSeccion">
-        <p>Selecciona una opción del menú para ver información.</p>
-      </div>
+      <h5 id="tituloSeccion"></h5>
+      <div id="contenidoSeccion"></div>
     </div>
 
     <!-- Gráfica -->
@@ -121,7 +119,6 @@ body {
 
 <script>
 function mostrarSeccion(seccion, link = null) {
-  // Cambiar activo del menú
   document.querySelectorAll('.sidebar a').forEach(a => a.classList.remove('active'));
   if (link) link.classList.add('active');
 
@@ -130,44 +127,58 @@ function mostrarSeccion(seccion, link = null) {
 
   const datos = {
     clientes: `
-      <ul>
-        <li>Juan Pérez</li>
-        <li>María López</li>
-        <li>Carlos Hernández</li>
+      <ul class="list-group">
+        <li class="list-group-item">Juan Pérez</li>
+        <li class="list-group-item">María López</li>
+        <li class="list-group-item">Carlos Hernández</li>
       </ul>
     `,
     empleados: `
-      <ul>
-        <li>Cajero</li>
-        <li>Administrador</li>
-        <li>Repartidor</li>
+      <ul class="list-group">
+        <li class="list-group-item">Administrador</li>
+        <li class="list-group-item">Cajero</li>
+        <li class="list-group-item">Repartidor</li>
       </ul>
     `,
     proveedores: `
-      <ul>
-        <li>Distribuidora Norte</li>
-        <li>Abarrotes San Juan</li>
-        <li>Comercial MX</li>
+      <ul class="list-group">
+        <li class="list-group-item">Distribuidora Norte</li>
+        <li class="list-group-item">Abarrotes San Juan</li>
+        <li class="list-group-item">Comercial MX</li>
       </ul>
     `,
     productos: `
       <table class="table table-striped">
-        <tr><td>Arroz</td><td>$25</td></tr>
-        <tr><td>Frijol</td><td>$30</td></tr>
-        <tr><td>Aceite</td><td>$45</td></tr>
+        <thead>
+          <tr><th>Producto</th><th>Precio</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Arroz</td><td>$25</td></tr>
+          <tr><td>Frijol</td><td>$30</td></tr>
+          <tr><td>Aceite</td><td>$45</td></tr>
+        </tbody>
       </table>
     `,
     ventas: `
-      <p>Total de ventas del mes: <strong>$8,500</strong></p>
+      <div class="alert alert-success">
+        Total de ventas del mes: <strong>$8,500</strong>
+      </div>
     `,
     pagos: `
-      <p>Clientes con pagos pendientes: <strong>3</strong></p>
+      <div class="alert alert-warning">
+        Clientes con pagos pendientes: <strong>3</strong>
+      </div>
     `
   };
 
   titulo.innerHTML = "📋 " + seccion.charAt(0).toUpperCase() + seccion.slice(1);
   contenido.innerHTML = datos[seccion];
 }
+
+// Cargar por defecto
+window.onload = () => {
+  mostrarSeccion('clientes', document.querySelector('.sidebar a'));
+};
 
 // Gráfica
 new Chart(document.getElementById('ventasChart'), {
