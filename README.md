@@ -55,7 +55,7 @@ Control de pagos parciales mediante abonos.
 Seguimiento del estado de adeudos de los clientes.
 
 🛠️ Tecnologías Utilizadas
-Backend
+🔧 Backend
 
 PHP
 
@@ -63,7 +63,7 @@ Programación Orientada a Objetos (POO)
 
 Patrón de diseño ORM (Object Relational Mapping)
 
-Base de Datos
+🗄️ Base de Datos
 
 MySQL / MariaDB
 
@@ -73,7 +73,7 @@ Llaves primarias y foráneas
 
 Integridad referencial
 
-Frontend
+🎨 Frontend
 
 HTML
 
@@ -83,9 +83,9 @@ Integración directa con PHP
 
 📊 Arquitectura de la Base de Datos
 
-La base de datos está diseñada bajo un modelo relacional normalizado, evitando redundancia y garantizando consistencia de los datos.
+La base de datos está diseñada bajo un modelo relacional normalizado, evitando redundancia y garantizando la consistencia de los datos.
 
-Tablas principales:
+📋 Tablas Principales
 
 cliente
 
@@ -101,7 +101,7 @@ detalle_venta
 
 pago_credito
 
-Cada tabla cuenta con su llave primaria y las relaciones necesarias mediante llaves foráneas, lo que asegura la integridad de la información en el sistema.
+Cada tabla cuenta con su llave primaria y las relaciones necesarias mediante llaves foráneas, asegurando la integridad de la información en el sistema.
 
 🔁 Implementación del ORM (Object Relational Mapping)
 
@@ -114,7 +114,7 @@ El ORM se organiza principalmente en la carpeta:
 models/
 
 
-Cada archivo dentro de esta carpeta representa una entidad del sistema, por ejemplo:
+Cada archivo representa una entidad del sistema, por ejemplo:
 
 Cliente.php
 
@@ -136,9 +136,9 @@ Cada clase del ORM:
 
 Representa una tabla de la base de datos.
 
-Sus atributos corresponden a los campos de la tabla.
+Contiene atributos que corresponden a los campos de la tabla.
 
-Contiene métodos para:
+Incluye métodos para:
 
 Insertar registros
 
@@ -150,15 +150,15 @@ Eliminar registros
 
 Ejemplo conceptual:
 
-La clase Producto se relaciona con la tabla producto
+Producto ↔ tabla producto
 
-La clase Venta se relaciona con la tabla venta
+Venta ↔ tabla venta
 
-La clase DetalleVenta permite manejar la relación entre ventas y productos
+DetalleVenta maneja la relación entre ventas y productos
 
 🔗 Manejo de Relaciones
 
-El ORM permite manejar relaciones entre tablas como:
+El ORM gestiona relaciones como:
 
 Cliente → Venta
 
@@ -168,11 +168,11 @@ Producto → Detalle de Venta
 
 Venta → Pago a Crédito
 
-Estas relaciones se gestionan mediante IDs como llaves foráneas, las cuales son manipuladas desde los modelos PHP, manteniendo la coherencia entre la lógica del sistema y la base de datos.
+Estas relaciones se controlan mediante IDs como llaves foráneas, garantizando coherencia entre la lógica del sistema y la base de datos.
 
 ✅ Ventajas del ORM en el Proyecto
 
-Separación entre la lógica de negocio y el acceso a datos.
+Separación entre lógica de negocio y acceso a datos.
 
 Código más ordenado y mantenible.
 
@@ -183,7 +183,7 @@ Facilita futuras modificaciones a la base de datos.
 Mejor comprensión del modelo relacional a través de clases.
 
 🔧 Instalación y Configuración
-Requisitos Previos
+📌 Requisitos Previos
 
 Apache
 
@@ -191,7 +191,7 @@ PHP 7.4 o superior
 
 MySQL / MariaDB
 
-Pasos
+⚙️ Pasos de Instalación
 
 Colocar el proyecto en:
 
@@ -205,7 +205,7 @@ Ejecutar el script:
 setup/schemas.sql
 
 
-(Opcional) Ejecutar:
+(Opcional) Cargar datos de prueba:
 
 setup/seed.sql
 
@@ -219,8 +219,16 @@ Acceder desde el navegador:
 
 http://localhost/tienda_abarrotes
 
+🎯 Objetivo Académico
 
+Este proyecto tiene como finalidad:
 
-Implementación de un ORM
+Aplicar conceptos de Bases de Datos
 
-Desarrollo de un sistema funcional para una tienda de abarrotes
+Implementar un ORM en PHP
+
+Usar correctamente llaves primarias y foráneas
+
+Desarrollar un sistema funcional para una tienda de abarrotes
+
+Simular un entorno real de ventas e inventario
