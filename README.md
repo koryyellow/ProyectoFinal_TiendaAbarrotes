@@ -18,7 +18,11 @@ El sistema permite administrar de forma eficiente el **inventario**, las **venta
 - Actualización automática del inventario al realizar ventas
 
 ---
+### Pasos a seguir 
+Cuando ingreses a la pagina principal es necesario que en usuario y contraseña pongas "admin" y "admin" respectivamente
+ya una vez dentro puedes agregar , eliminar datos como si fuera la interfaz de la tienda que gestionas 
 
+---
 ### 👥 Gestión de Usuarios
 - Administración de clientes
 - Gestión de empleados
