@@ -25,6 +25,7 @@ body {
   border-radius:8px;
   text-decoration:none;
   color:#333;
+  cursor:pointer;
 }
 .sidebar a.active,
 .sidebar a:hover {
@@ -39,6 +40,7 @@ body {
   color:#fff;
   border-radius:15px;
   padding:20px;
+  cursor:pointer;
 }
 .table-box {
   background:white;
@@ -55,12 +57,12 @@ body {
   <!-- Sidebar -->
   <div class="sidebar">
     <h4 class="mb-4">🛒 Admin Panel</h4>
-    <a class="active">Clientes</a>
-    <a>Empleados</a>
-    <a>Proveedores</a>
-    <a>Productos</a>
-    <a>Ventas</a>
-    <a>Pagos Crédito</a>
+    <a class="active" onclick="mostrarSeccion('clientes', this)">Clientes</a>
+    <a onclick="mostrarSeccion('empleados', this)">Empleados</a>
+    <a onclick="mostrarSeccion('proveedores', this)">Proveedores</a>
+    <a onclick="mostrarSeccion('productos', this)">Productos</a>
+    <a onclick="mostrarSeccion('ventas', this)">Ventas</a>
+    <a onclick="mostrarSeccion('pagos', this)">Pagos Crédito</a>
   </div>
 
   <!-- Main -->
@@ -69,56 +71,43 @@ body {
     <!-- Cards -->
     <div class="row g-4 mb-4">
       <div class="col-md-2 col-6">
-        <div class="card-dashboard" style="background:#4e73df">
+        <div class="card-dashboard" style="background:#4e73df" onclick="mostrarSeccion('clientes')">
           <i class="bi bi-people-fill"></i> Clientes
           <h2>18</h2>
         </div>
       </div>
       <div class="col-md-2 col-6">
-        <div class="card-dashboard" style="background:#1cc88a">
+        <div class="card-dashboard" style="background:#1cc88a" onclick="mostrarSeccion('empleados')">
           <i class="bi bi-person-badge-fill"></i> Empleados
           <h2>5</h2>
         </div>
       </div>
       <div class="col-md-2 col-6">
-        <div class="card-dashboard" style="background:#36b9cc">
+        <div class="card-dashboard" style="background:#36b9cc" onclick="mostrarSeccion('proveedores')">
           <i class="bi bi-truck"></i> Proveedores
           <h2>7</h2>
         </div>
       </div>
       <div class="col-md-2 col-6">
-        <div class="card-dashboard" style="background:#f6c23e">
+        <div class="card-dashboard" style="background:#f6c23e" onclick="mostrarSeccion('productos')">
           <i class="bi bi-box-seam"></i> Productos
           <h2>42</h2>
         </div>
       </div>
       <div class="col-md-2 col-6">
-        <div class="card-dashboard" style="background:#e74a3b">
+        <div class="card-dashboard" style="background:#e74a3b" onclick="mostrarSeccion('ventas')">
           <i class="bi bi-cart-fill"></i> Ventas
           <h2>26</h2>
         </div>
       </div>
     </div>
 
-    <!-- Tabla -->
+    <!-- Contenido dinámico -->
     <div class="table-box mb-4">
-      <h5>📋 Productos</h5>
-      <table class="table table-striped">
-        <thead class="table-primary">
-          <tr>
-            <th>ID</th>
-            <th>Producto</th>
-            <th>Precio</th>
-            <th>Stock</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>1</td><td>Arroz</td><td>$25</td><td>40</td></tr>
-          <tr><td>2</td><td>Frijol</td><td>$30</td><td>28</td></tr>
-          <tr><td>3</td><td>Azúcar</td><td>$22</td><td>15</td></tr>
-          <tr><td>4</td><td>Aceite</td><td>$45</td><td>10</td></tr>
-        </tbody>
-      </table>
+      <h5 id="tituloSeccion">📋 Productos</h5>
+      <div id="contenidoSeccion">
+        <p>Selecciona una opción del menú para ver información.</p>
+      </div>
     </div>
 
     <!-- Gráfica -->
@@ -131,6 +120,56 @@ body {
 </div>
 
 <script>
+function mostrarSeccion(seccion, link = null) {
+  // Cambiar activo del menú
+  document.querySelectorAll('.sidebar a').forEach(a => a.classList.remove('active'));
+  if (link) link.classList.add('active');
+
+  const titulo = document.getElementById('tituloSeccion');
+  const contenido = document.getElementById('contenidoSeccion');
+
+  const datos = {
+    clientes: `
+      <ul>
+        <li>Juan Pérez</li>
+        <li>María López</li>
+        <li>Carlos Hernández</li>
+      </ul>
+    `,
+    empleados: `
+      <ul>
+        <li>Cajero</li>
+        <li>Administrador</li>
+        <li>Repartidor</li>
+      </ul>
+    `,
+    proveedores: `
+      <ul>
+        <li>Distribuidora Norte</li>
+        <li>Abarrotes San Juan</li>
+        <li>Comercial MX</li>
+      </ul>
+    `,
+    productos: `
+      <table class="table table-striped">
+        <tr><td>Arroz</td><td>$25</td></tr>
+        <tr><td>Frijol</td><td>$30</td></tr>
+        <tr><td>Aceite</td><td>$45</td></tr>
+      </table>
+    `,
+    ventas: `
+      <p>Total de ventas del mes: <strong>$8,500</strong></p>
+    `,
+    pagos: `
+      <p>Clientes con pagos pendientes: <strong>3</strong></p>
+    `
+  };
+
+  titulo.innerHTML = "📋 " + seccion.charAt(0).toUpperCase() + seccion.slice(1);
+  contenido.innerHTML = datos[seccion];
+}
+
+// Gráfica
 new Chart(document.getElementById('ventasChart'), {
   type: 'bar',
   data: {
